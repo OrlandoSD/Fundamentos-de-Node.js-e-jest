@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Configurando o TypeScript",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
+
   "scripts": {
     "build": "rm-rf ./build && tsc",
-    "start": "nodemon src/index.js",
+    "start": "node build/index.js",
     "dev": "ts-node-dev src/index.js",
     "test": "jest"
   },
