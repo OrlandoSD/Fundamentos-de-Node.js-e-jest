@@ -1,26 +1,16 @@
-import {request, response, Router} from 'express';
+import { Router } from 'express';
+import { usersController } from '../controllers/usersController';
+
+const database = []
 
 const routes = Router()
 
-const database = ['Nath']
-
-routes.get('/users', (request, response)=>{
-    return response.status(200).json(database)
-})
 
 
-routes.post('/users', (request, response) =>{
-    console.log(request.body)
-})
+routes.get('/users', usersController.listarUsuario)
 
 
-//STATUS CODE
-//200 e 201
-//404
-
-//GET - ler os dados
-//POST - criar os dados
-//PU/PATCH - editar os dados
-// DELETE - deletar dados
+routes.post('/users', usersController.criarUsuario)
 
 export {routes}
+
